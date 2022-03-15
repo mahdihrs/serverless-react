@@ -1,0 +1,60 @@
+{
+  "arrival_info": [
+    {
+      "label": "Check-in:",
+      "text": " 3:00 PM"
+    },
+    {
+      "label": "Check-out:",
+      "text": " 11:00 AM"
+    },
+    {
+      "label": "Parking:",
+      "text": " Self-parking in the underground garage is ￡15 per day and valet-parking is ￡50 per day."
+    },
+    {
+      "label": "Airport Shuttle:",
+      "text": " Our complimentary airport shuttles leave every hour on the hour, and make trips to Heathrow and Gatwick airports."
+    },
+    {
+      "label": "Trains:",
+      "text": " The nearest Underground station is at Leicester Square."
+    },
+    {
+      "label": "Pet Policy:",
+      "text": " Pets of all sizes and types are allowed in designated pet rooms, and the specified common areas. Service animals are allowed everywhere."
+    }
+  ],
+  "services_amenities": [
+    "Indoor pool",
+    "24-hour fitness center",
+    "Massage therapy",
+    "Full service spa",
+    "In-room jacuzzi tubs",
+    "Rooftop café  &amp; smoothie bar",
+    "Coffee bar  &amp; pastry shop",
+    "Traditional continental breakfast",
+    "24-hour concierge service",
+    "Business center",
+    "Complimentary wireless service",
+    "Laundry &amp; dry cleaning service",
+    "Daily paper",
+    "Certified \"green\" hotel",
+    "Pet-friendly rooms  &amp; common areas"
+  ],
+  "accessibility": [
+    "Grab bars on tub walls",
+    "Shower chairs",
+    "Hand held shower sprayers",
+    "Higher toilets &amp; toilet modifiers",
+    "Lower sink faucet handles",
+    "Wheelchair clearance under sinks &amp; vanity",
+    "Lower racks in closet",
+    "TDD machines",
+    "Telephone light signalers  &amp; smoke alarms",
+    "Telephone amplification handsets",
+    "Closed captioned television converters",
+    "Vibrating alarm clocks",
+    "Telephones with volume control"
+  ]
+}
