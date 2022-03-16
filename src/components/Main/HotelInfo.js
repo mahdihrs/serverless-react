@@ -13,21 +13,21 @@ export default function HotelInfo() {
         <section id="arrivalinfo">
           <h2>Arrival Information</h2>
           <ul>
-            {arrival_info.map((info) => <li><strong>{info.label}</strong>{info.text}</li>)}
+            {arrival_info.map((info) => <li key={info.label}><strong>{info.label}</strong>{info.text}</li>)}
           </ul>
         </section>
         <section className="checklist" id="services">
           <h2>Services and Amenities</h2>
           <p>Our services and amenities are designed to make your travel easy, your stay comfortable, and your experience one-of-a-kind.</p>
           <ul>
-            {services_amenities.map((service) => <li>{service}</li>)}
+            {services_amenities.map((service) => <li key={service.name}>{service.name}</li>)}
           </ul>
         </section>
         <section className="checklist" id="accessibility">
           <h2>Accessibility</h2>
           <p>We're committed to maintaining the same quality of service for every individual. We offer the following facilities for those with special needs:</p>
           <ul>
-            {accessibility.map((service) => <li>{service}</li>)}
+            {accessibility.map((accessblty) => <li key={accessblty.name}>{accessblty.name}</li>)}
           </ul>
         </section>
       </article>
