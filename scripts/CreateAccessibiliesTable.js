@@ -1,12 +1,12 @@
-var AWS = require("aws-sdk");
+const AWS = require("aws-sdk");
 
 AWS.config.update({
   region: "us-east-1"
 });
 
-var dynamodb = new AWS.DynamoDB();
+const dynamodb = new AWS.DynamoDB();
 
-var params = {
+const params = {
   TableName: "Accessibility",
   KeySchema: [
     // Partition Key

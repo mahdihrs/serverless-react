@@ -1,29 +1,29 @@
-var AWS = require("aws-sdk");
+const AWS = require("aws-sdk");
 
 AWS.config.update({
   region: "us-east-1"
 });
 
-var dynamodb = new AWS.DynamoDB();
+const dynamodb = new AWS.DynamoDB();
 
-var params = {
-  TableName: "MenuLinks",
+const params = {
+  TableName: "Gallery",
   KeySchema: [
     // Partition Key
-    { AttributeName: "href", KeyType: "HASH" },
+    { AttributeName: "src", KeyType: "HASH" },
     // Sort Keys
-    { AttributeName: "text", KeyType: "RANGE"}  
+    { AttributeName: "alt", KeyType: "RANGE"}  
   ],
   AttributeDefinitions: [
-    { AttributeName: "class", AttributeType: "S" },
-    { AttributeName: "href", AttributeType: "S" },
-    { AttributeName: "text", AttributeType: "S" }
+    { AttributeName: "src", AttributeType: "S" },
+    { AttributeName: "alt", AttributeType: "S" },
+    { AttributeName: "class", AttributeType: "S" }
   ],
   LocalSecondaryIndexes: [
     {
       IndexName: "ClassIndex",
       KeySchema: [
-        { AttributeName: "href", KeyType: "HASH" },
+        { AttributeName: "src", KeyType: "HASH" },
         { AttributeName: "class", KeyType: "RANGE" }
       ],
       Projection: {
