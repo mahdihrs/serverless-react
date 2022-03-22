@@ -1,8 +1,18 @@
 import React from "react";
 
-import menu from './data/menuLinks.json'
-
 export default function Header() {
+  const [menu, setMenu] = React.useState(null);
+
+  const fetchMenuList = async() => {
+    const menuList = await fetch(`${process.env.REACT_APP_BASE_URL}/menu`)
+    const menuFormatted = await menuList.json()
+    setMenu(menuFormatted)
+  }
+
+  React.useEffect(() => {
+    fetchMenuList();
+  }, []);
+
   return (
     <header id="intro">
       <article className="fullheight">
@@ -17,7 +27,7 @@ export default function Header() {
         <div className="navbar">
           <div className="brand"><a href="#welcome">Landon <span>Hotel</span></a></div>
           <ul>
-            {menu.map((list) => <li key={list.text}><a className={`icon ${list.class}`} href={list.href}><span>{list.text}</span></a></li>)}
+            {menu?.map((list) => <li key={list.text}><a className={`icon ${list.class}`} href={list.href}><span>{list.text}</span></a></li>)}
           </ul>
         </div>
       </nav>

@@ -3,7 +3,27 @@ import React from 'react'
 import hotelInfo from '../data/hotel-info.json'
 
 export default function HotelInfo() {
-  const { arrival_info, services_amenities, accessibility } = hotelInfo
+  const { arrival_info } = hotelInfo
+  const [services_amenities, setServicesAmenities] = React.useState(null);
+  const [accessibility, setAccessibility] = React.useState(null);
+
+  const fetchServices = async() => {
+    const servicesFetched = await fetch(`${process.env.REACT_APP_BASE_URL}/services`)
+    const servicesFormatted = await servicesFetched.json();
+    setServicesAmenities(servicesFormatted);
+  }
+
+  const fetchAccessibilities = async() => {
+    const accessibilitiesFetched = await fetch(`${process.env.REACT_APP_BASE_URL}/accessibility`)
+    const accessibilitiesFormatted = await accessibilitiesFetched.json();
+    setAccessibility(accessibilitiesFormatted);
+  }
+
+  React.useEffect(() => {
+    fetchServices();
+    fetchAccessibilities();
+  }, []);
+
   return (
     <div className="scene" id="hotelinfo">
       <article className="heading">
@@ -20,14 +40,14 @@ export default function HotelInfo() {
           <h2>Services and Amenities</h2>
           <p>Our services and amenities are designed to make your travel easy, your stay comfortable, and your experience one-of-a-kind.</p>
           <ul>
-            {services_amenities.map((service) => <li key={service.name}>{service.name}</li>)}
+            {services_amenities?.map((service) => <li key={service.name}>{service.name}</li>)}
           </ul>
         </section>
         <section className="checklist" id="accessibility">
           <h2>Accessibility</h2>
           <p>We're committed to maintaining the same quality of service for every individual. We offer the following facilities for those with special needs:</p>
           <ul>
-            {accessibility.map((accessblty) => <li key={accessblty.name}>{accessblty.name}</li>)}
+            {accessibility?.map((accessblty) => <li key={accessblty.name}>{accessblty.name}</li>)}
           </ul>
         </section>
       </article>
